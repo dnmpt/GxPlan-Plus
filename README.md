@@ -70,24 +70,29 @@ Built with **Python (Django framework)** and a modern **Bootstrap interface**, G
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/<your-username>/gxplan-plus.git
-   cd gxplan-plus
+   git clone https://github.com/<your-username>/GxPlan-Plus.git
+   cd GxPlan-Plus
    ```
 
 2. **Create a virtual environment**
    ```bash
    python3 -m venv env
-   source env/bin/activate   # Linux / macOS
+   . env/bin/activate   # Linux / macOS
    env\Scripts\activate    # Windows
    ```
 
 3. **Install dependencies**
    ```bash
-   pip install -r requirements.txt
+   pip install -r src/site1-main/requirements/dev.txt
+   or simplest (Linux):
+   cd commands
+   ./packages_dev.sh
    ```
 
 4. **Run database migrations**
    ```bash
+   cd ..
+   cd src/site1
    python manage.py migrate
    ```
 
