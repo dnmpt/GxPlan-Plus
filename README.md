@@ -51,17 +51,30 @@ Built with **Python (Django framework)** and a modern **Bootstrap interface**, G
 ## 🧩 System Modules
 
 ```
-/gxplan_plus/             → Main Django project configuration
-/apps/
-    ├── projects/         → Project and task management
-    ├── notes/            → Traceable notes and audit trail
-    ├── users/            → Authentication, roles, and permissions
-    ├── dashboard/        → Bootstrap-powered dashboards
-/templates/               → HTML templates (Bootstrap 5)
-/static/                  → CSS, JS, and media files
-/db.sqlite3               → Default development database
-/manage.py                → Django management script
-/LICENSE.md               → MIT License
+/GxPlan_Plus/             → Main Django project configuration
+/commands/                → Local shell scripts
+/db_backups/              → Database dumps (has the initial database)
+/mockups/                 → Site design archives
+/src/
+    ├── site1-main/
+        ├── externals/               → Included external dependencies
+        ├── locale/                  → Translations
+        ├── requirements/            → Specification of the required Python libraries
+        ├── static/                  → Static files : CSS, JS, and media files
+        ├── uploads/                 → Media uploads
+        ├── site1/                   → Project and task management WebApp
+            ├── settings/            → Project environments configuration
+            ├── site-static/         → Site specific static files
+            ├── apps/
+                  ├── core/         → Project and task management (main App)
+                  /templates/       → HTML templates (Bootstrap 5)              
+        /db.sqlite3                 → Default development database
+        /manage.py                  → Django management script
+        /LICENSE.md                 → MIT License
+        /README.md                  → This file
+
+For more information check file 'Pastas_Projecto.txt' (in Portuguese only).
+
 ```
 
 ---
