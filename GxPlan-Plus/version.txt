@@ -1,0 +1,5 @@
+GxPlan-Plus
+version 0.1-alpha
+20251106
+
+2023-2025 Copyright by Duarte Mendes
