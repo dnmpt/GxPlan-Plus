@@ -93,6 +93,7 @@ Built with **Python (Django framework)** and a modern **Bootstrap interface**, G
    ```bash
    cd ..
    cd src/site1-main
+   python manage.py makemigrations
    python manage.py migrate
    ```
 
@@ -109,6 +110,14 @@ Built with **Python (Django framework)** and a modern **Bootstrap interface**, G
 7. **Access the application**
    Open your browser and go to [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
+
+8. **Enter data**
+   Access Administration of Django : [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
+   with 'admin' user and create other users or enter categories
+
+   **NOTE:**
+   This application is in development and 'category' management is not yet implemented.
+   So, the high level object ('category') must be entered and associated to a user using this option.
 ---
 
 ## 🧠 Philosophy — “Planning a Collaborative Compliance”
