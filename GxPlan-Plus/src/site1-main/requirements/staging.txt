@@ -1,0 +1,3 @@
+# requirements/staging.txt
+-r _base.txt
+# incluir aqui pacotes específicos

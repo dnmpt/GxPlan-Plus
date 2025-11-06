@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if ctg.author == user %}
+    <div style="padding: 30px;">
+        <h1 style="color: darkblue">Edit Project:</h1>
+        <br>
+        <form action="editrecord/{{ proj.id }}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+            <b><label for="catg_">Category : </label></b>
+            <select name="ctg_" id="ctg_" required>
+            {% for ctg in categs %}
+                {% if ctg.author == user %}
+                    {% if proj.categ.id == ctg.id %}  
+                        <option value="{{ctg.id}}" selected>{{ctg.name}}</option>
+                    {% else %}
+                        <option value="{{ctg.id}}">{{ctg.name}}</option>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+            </select>
+
+            <br><br>
+            <b><label for="name">Project Name: </label></b>
+            <input type="text" id="name" name="name" required minlength="3" maxlength= "200" size="70" value="{{ proj.name }}">
+            <br><br>
+            <b><p><label for="notes" ali>Project Notes:</label></p></b>
+            <textarea rows="9" cols="70" id="notes" name="notes">{{ proj.notes }}</textarea>
+            <br><br>
+            <b><label for="start_date">Start date: </label></b>
+            {% if proj.start_date %}
+                <input type="date" id="start_date" name="start_date" value="{{proj.start_date|date_calendar}}">
+            {% else %}
+                <input type="date" id="start_date" name="start_date">
+            {% endif %}
+            <br><br>
+            <b><label for="end_date">End date: </label></b>
+            {% if proj.end_date %}
+                <input type="date" id="end_date" name="end_date" value="{{proj.end_date|date_calendar}}">   
+            {% else %}    
+                <input type="date" id="end_date" name="end_date">
+            {% endif %}
+            <br><br>
+
+            <b><label for="status_">Status : </label></b>
+            <select name="status_" id="status_" required>
+            {% for key,value in status.items %}
+                {% if proj.status == key %}  
+                    <option value="{{key}}" selected>{{value}}</option>
+                {% else %}
+                    <option value="{{key}}">{{value}}</option>
+                {% endif %}
+            {% endfor %}
+            </select>
+
+            <br><br>
+            <div class="custom-file">
+                <b><p><label class="custom-file-label" for="image">Current Image File :</label> {{proj.image}}</p></b>
+                <input type="file" class="custom-file-input" id="image" name="image">
+            </div>
+            <br><br>
+            <input type="submit" class="btn btn-primary" value="Update">
+        </form>
+    </div>
+    {% else %}
+        <p></p>
+        <center><h2>Access not authorized !</h2></center>
+    {% endif %}
+{% endblock %}

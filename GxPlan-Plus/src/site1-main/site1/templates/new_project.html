@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if ctg.author == user %}
+
+        <div style="padding:30px;">
+            <h1 style="color: darkblue">Create a New Project:</h1>
+            <br>
+
+        {% if msg %}
+            <b><p style=color:red>ERRORS found in Form :</p></b>
+            <i>{{msg}}</i>
+        {% endif %}
+        
+            <form method="post" enctype="multipart/form-data"> <!-- ou POST. Em HTML é indeferente! -->
+                {% csrf_token %} <!-- Token para segurança que garante que os dados vêm dele mesmo -->
+                
+                <b><label for="catg_">Category :</label></b>
+                <select name="ctg_" id="ctg_" required>
+                {% for ctg_ in categs %}
+                    {% if ctg_.author == user %}
+                        {% if ctg_ == ctg %}  
+                            <option value="{{ctg_.id}}" selected>{{ctg_.name}}</option>
+                        {% else %}
+                            <option value="{{ctg_.id}}">{{ctg_.name}}</option>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+                </select>
+                <br><br>
+                <!-- using ProjectForm class in forms.py ! -->
+                <table>   
+                    {{form.as_table}} 
+                </table>
+
+                <br>
+                   
+                <!-- HTML select for ImageFile upload -->
+                <br><br>
+                <div class="custom-file">
+                    <b><p><label class="custom-file-label" for="image">Choose an Image File :</label></p></b>
+                    <input type="file" class="custom-file-input" id="image" name="image">
+                </div>
+                <br><br>
+                <input type="submit" class="btn btn-primary" value="Create" />
+            </form>
+        </div>
+    {% else %}
+        <p></p>
+        <center><h2>Access not authorized !</h2></center>
+    {% endif %}
+{% endblock %}

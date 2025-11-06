@@ -1,0 +1,54 @@
+/projects 	# Pasta para todos os projectos
+	/my_project_website						# Pasta de um projecto
+	$ apt install python3.12-env                # LINUX : Ou a versão mais recente
+	$ python3 -m venv env						# Criação da pasta 'env' do ambiente virtual
+	$ env\Scripts\activate						# WINDOWS : Activação do ambiente virtual (env)
+	$ . env/bin/activate						# LINUX : Activação do ambiente virtual (env)
+	$ pip index versions django					# Verificar as versões disponíveis do Django
+	$ pip install "Django~=3.0.0"				# Instalação do Django (versão mínima)
+
+		# Criar as seguinte directorias :
+		/commands 						# shell script locais do projecto
+		/db_backups						# dumps da base de dados
+		/mockups						# Arquivos de design do site
+		/src							# FINALMENTE O PROJETO DJANGO
+		# django-admin.py startproject myproject
+
+			/myproject					# Cria automaticamente
+			# Renomear a directoria anterior para "django-myproject" para evitar confusão :
+			/django-myproject				# Pasta raíz do projecto para GIT
+
+				# Criar os seguintes ficheiros e directorias :
+				/.git					# Se controlo de versões
+				README.md				# Para descrever o projeto aos outros desenvolvedores
+				LICENSE					# Descrever a licença (https://choosealicense.com)
+				/media					# Para os uploads do projeto
+				/static					# Para os arquivos estáticos reunidos
+				/locale					# Para as traduções do projecto
+				/externals				# Para incluir as dependências externas
+					/apps
+					/libs
+				
+				/myproject				# Criada automaticamente pelo 'startproject'
+					/apps				# Para as aplicações Django internas ao projecto
+						/core			# App principal
+						/utils			# Funcionalidades partilhadas
+					/settings			# Configurações do projeto (dev, production, test, staging)
+					/site_static			# Arquivos estáticos específicos do projeto
+						/scss			# OPCIONAL: para Sass
+						/css			# Para os CSS
+						/img			# Para imagens, favicons e logos para estilização
+						/js			# Para JavaScripts
+						/vendor			# OPCIONAL: Módulos de terceiros, incluindo arquivos ...
+					/templates			# Para os templates HTML (páginas diretas)
+						/includes		# Para os templates incluídos em outros (partial views)
+						/utils			# Para código reutilizável globalmente (paginação, seleção de idioma, base.html)
+					urls.py				# Para a configuração das urls do projeto
+					wsgi.py				# Configuração do servidor web do projeto
+
+
+
+
+
+
+

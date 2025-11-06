@@ -1,0 +1,7 @@
+# Python packages for pip to intall in All environments:
+Django~=4.2.16
+Pillow
+numpy
+pandas
+matplotlib
+openpyxl

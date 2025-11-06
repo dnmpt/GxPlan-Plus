@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if ctg.author == user %}
+    <table width="100%" border = 0>
+    <tr><td style="width:25%; text-align:center">
+
+        <form action="">
+            <br><b>List by Status:</b></br></br> 
+            {% for key,value in status.items %}
+             | <input type="radio" id="{{value}}" name="list_status" value="{{key}}">
+              <label for="{{value}}">{{value}}</label>
+            {% endfor %}
+            | </br></br><input type="submit" class="btn btn-secondary" value="Filter by Status">
+         </form>
+    </td>
+        <td align="center"><p></p><h1 style="color: darkblue">Projects from:</h1> <br><h3>{{ctg.name}}</h3></td>
+        <td><p></p><a href="new/{{ctg.id}}" class="btn btn-primary">New Project</a></td>
+    </tr>
+    </table>
+    <hr>
+        <div class="container">
+            <table width="100%" border = 0>
+            {% for proj in project_list %}
+            <tr>
+                <td style="vertical-align:top;text-align:left;padding-top: 10px">
+                <div class="card m-3" style="width: 25rem";>
+                    <img src="{{proj.image.url}}" class="card-img-top embed-responsive-item" style = "width: 100%">    
+                    <ul class="list-group list-group-flush">
+                    </ul>
+                    <div class="card-body">                     
+                        <a href="/project/{{proj.id}}" class="btn btn-primary">Go to Tasks</a>
+                        <a href="/project/edit/{{proj.id}}" class="btn btn-secondary">Edit Project</a>
+                        <a href="/project/delete/{{proj.id}}" class="btn btn-danger">Delete Project</a>
+                    </div>
+                </div>
+                </td>
+                <td style="vertical-align:top;text-align:left;padding-top: 30px">
+                    <h2><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-heading" viewBox="0 0 16 16">
+                        <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                        <path d="M3 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0-5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-1z"/>
+                      </svg> {{proj.name}}</h2>
+                      <p>{{proj.notes}}</p>
+                      <ul>                       
+                            <li><i>Start date : </i>
+                                {% if proj.start_date %}   
+                                    {{proj.start_date|date_only}}
+                                {% else %}
+                                    Not set !
+                                {% endif %}</li>
+
+                                <li><i>End date : </i>
+                                    {% if proj.end_date %}   
+                                        {{proj.end_date|date_only}}
+                                    {% else %}
+                                        Not set !
+                                    {% endif %}</li>
+
+                        <li><b>Status : </b>{{status|dict_value:proj.status}}</li>
+                    </ul>
+                    </div>   
+                </td>
+            {% endfor %}
+            </table>
+        </div>
+    {% else %}
+        <p></p>
+        <center><h2>Access not authorized !</h2></center>
+    {% endif %}
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if ctg.author == user %}
+
+        <div style="padding:30px;">
+            <h1 style="color: darkblue">Create a New Task:</h1>
+            <br>
+
+        {% if msg %}
+            <b><p style=color:red>ERRORS found in Form :</p></b>
+            <i>{{msg}}</i>
+        {% endif %}
+        
+            <form method="post"> <!-- ou POST. Em HTML é indeferente! -->
+                {% csrf_token %} <!-- Token para segurança que garante que os dados vêm dele mesmo -->
+                
+                <!-- using ProjectForm class in forms.py ! -->
+                <table>
+                    {{form.as_table}}
+                </table>
+                <br><br>
+                <input type="submit" class="btn btn-primary" value="Create" />
+            </form>
+        </div>
+    {% else %}
+        <p></p>
+        <center><h2>Access not authorized !</h2></center>
+    {% endif %}
+{% endblock %}
