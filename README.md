@@ -84,7 +84,7 @@ Built with **Python (Django framework)** and a modern **Bootstrap interface**, G
 3. **Install dependencies**
    ```bash
    pip install -r src/site1-main/requirements/dev.txt
-   or simplest (Linux):
+   or simpler (Linux):
    cd commands
    ./packages_dev.sh
    ```
@@ -92,7 +92,7 @@ Built with **Python (Django framework)** and a modern **Bootstrap interface**, G
 4. **Run database migrations**
    ```bash
    cd ..
-   cd src/site1
+   cd src/site1-main
    python manage.py migrate
    ```
 
