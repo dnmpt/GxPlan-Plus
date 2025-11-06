@@ -117,7 +117,7 @@ Built with **Python (Django framework)** and a modern **Bootstrap interface**, G
 
    **NOTE:**
    This application is in development and 'category' management is not yet implemented.
-   So, the high level object ('category') must be entered and associated to a user using this option.
+   So, the high level object ('category') must be entered and associated to an user using this option.
 ---
 
 ## 🧠 Philosophy — “Planning a Collaborative Compliance”
