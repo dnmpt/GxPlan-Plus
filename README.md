@@ -174,11 +174,11 @@ This project is distributed under the terms of the **MIT License** — see [LICE
 
 ## 🖼️ Screenshots
 
-<img width="1269" height="589" alt="imagem" src="https://github.com/user-attachments/assets/8f6131cb-7a5f-4551-bedc-3d40124e0c6a" />
+<img width="1283" height="599" alt="image" src="https://github.com/user-attachments/assets/55ab2d3b-f4f0-4af9-baa1-dacb02454848" />
 <br><br>
-<img width="1238" height="451" alt="imagem" src="https://github.com/user-attachments/assets/2582b191-e4c0-419e-8ed7-dd67b26b59bc" />
+<img width="1251" height="463" alt="image" src="https://github.com/user-attachments/assets/29b8f3e5-b71f-4475-9618-6e3b5da79f29" />
 <br><br>
-<img width="875" height="543" alt="imagem" src="https://github.com/user-attachments/assets/e1e69e36-8068-427a-8bb8-2c0116aec945" />
+<img width="891" height="554" alt="image" src="https://github.com/user-attachments/assets/b39ddf69-6109-481c-9bad-2be55a101795" />
 <br><br>
-<img width="673" height="613" alt="imagem" src="https://github.com/user-attachments/assets/87e13738-221b-4d4a-b6df-4f86b5b32640" />
+<img width="685" height="622" alt="image" src="https://github.com/user-attachments/assets/ae4c8ce8-e243-4671-ae3d-434d1ace69a1" />
 <br><br>
