@@ -180,5 +180,5 @@ This project is distributed under the terms of the **MIT License** — see [LICE
 <br><br>
 <img width="891" height="554" alt="image" src="https://github.com/user-attachments/assets/b39ddf69-6109-481c-9bad-2be55a101795" />
 <br><br>
-<img width="685" height="622" alt="image" src="https://github.com/user-attachments/assets/ae4c8ce8-e243-4671-ae3d-434d1ace69a1" />
+<img width="685" height="622" alt="image" src="https://github.com/user-attachments/assets/1d3410c0-8872-4bf1-a67e-308ba9493c8c" />
 <br><br>
